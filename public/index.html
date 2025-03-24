@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body">
+    <!-- Error messages that are initially hidden (display: none) -->
+    <div class="notEmail" style="display: none">
+      Sorry, This is not an email
+    </div>
+    <div class="usernameUsed" style="display: none">
+      Sorry, This username is already used.
+    </div>
+    <div class="emptyField" style="display: none">
+      There is a field missing!!
+    </div>
+    <div class="wrongNumber">This is not a number</div>
+    <div class="shortUsername" style="display: none">FullName is too short</div>
+    <div class="notStrongPassword" style="display: none">
+      Sorry, it's a weak password
+    </div>
+    <div class="dontHaveAccount" style="display: none">
+      Your email or password are incorrect.
+    </div>
+    <div class="haveAccount" style="display: none">
+      Your password is incorrect.
+    </div>
+    <div class="hasAccount" style="display: none">
+      You already have an account, you can
+      <a href="#" onclick="LoginLink2()" id="log1"> Log in</a>
+    </div>
+
+    <!-- Main container for the login and signup forms -->
+    <div class="container1">
+      <!-- Title of the site -->
+      <div class="title">SportZone</div>
+      <div class="LoginInfo">
+        <!-- Login form input fields -->
+        <div class="input-box">
+          <input type="text" id="loginUsername" placeholder="Username" />
+        </div>
+        <div class="input-box">
+          <input type="password" id="loginPassword" placeholder="Password" />
+        </div>
+        <!-- Login button -->
+        <div class="button">
+          <input type="button" onclick="checkLoginDetails()" value="Log in" />
+        </div>
+        <!-- Link to go to the signup page -->
+        <div class="dontHaveAcc">
+          Don't have an account?
+          <a href="#" onclick="SignUpLink()" id="SignUp">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Sign-up form (initially hidden) -->
+      <div class="SignUpInfo" style="display: none">
+        <!-- Input fields for sign-up -->
+        <div class="input-box">
+          <input type="text" id="email" placeholder="Email" />
+        </div>
+        <div class="input-box">
+          <input type="text" id="Username" placeholder="Username" />
+        </div>
+        <div class="input-box">
+          <input type="text" id="number" placeholder="Number" />
+        </div>
+        <div class="input-box">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter new password"
+          />
+        </div>
+        <!-- Sign-up button -->
+        <div class="button">
+          <!-- Comment: On button click, create account if all requirements are met and store data in local storage -->
+          <input onclick="createAcc()" type="button" value="Sign up" />
+        </div>
+        <!-- Link to go to the login page -->
+        <div class="HaveAcc">
+          Have an account?
+          <a href="#" onclick="LoginLink()" id="Login">Log in</a>
+        </div>
+      </div>
+
+      <!-- Logo image -->
+      <div class="logo">
+        <img src="Images/logo.webp" alt="Logo" width="300px" height="300px" />
+      </div>
+    </div>
+
+    <!-- Homepage content (hidden by default) -->
+    <div class="HomePage" style="display: none">
+      <div class="nav">
+        <!-- Navigation bar with logo and search options -->
+        <div class="LogoImg">Sport Zone</div>
+        <div class="ContentSearch">
+          <!-- Search for content -->
+          <input
+            type="search"
+            id="searchContent"
+            name="search"
+            placeholder="Search here..."
+          />
+          <button onclick="displaySearchContent()" type="button">Search</button>
+        </div>
+        <div class="UserSearch">
+          <!-- Search for users -->
+          <input
+            type="search"
+            id="searchUser"
+            name="search"
+            placeholder="Search here for other people..."
+          />
+          <button onclick="displaySearchedUsers()" type="button">Search</button>
+        </div>
+        <!-- Button to upload content -->
+        <div class="PostContent">
+          <button onclick="upload()" type="button">+ Upload</button>
+        </div>
+        <!-- Button to access user profile -->
+        <div class="ProfileButton">
+          <button id="profileButton" type="button"></button>
+        </div>
+        <!-- Button to log out -->
+        <div class="LogOut">
+          <button onclick="logOut()" type="button">Log Out</button>
+        </div>
+      </div>
+
+      <!-- Navigation buttons for the homepage -->
+      <button onclick="forYou()" class="ForYou" type="button">For You</button>
+      <button onclick="followingContent()" class="Following" type="button">
+        Following
+      </button>
+      <!--Third party Api-->
+      <div class="apiData">
+        <div class="season">2024-2025</div>
+        <div class="numberOfMatches">Next 3 matches:</div>
+        <div class="matches"></div>
+      </div>
+      <!-- Message displayed if no content is found -->
+      <div class="NoContent" style="display: none">Content not found</div>
+      <div class="AllContent">
+        <div class="AllPosts">
+          <!-- Placeholder for all posts -->
+        </div>
+      </div>
+
+      <!-- Add post container (hidden by default) -->
+      <div class="AddPostContainer" style="display: none">
+        <div class="BlogContent">
+          <!-- Textarea to write blog content -->
+          <textarea id="BlogContent" placeholder="Write here....."></textarea>
+        </div>
+        <div class="uploadImages">
+          <!-- File input for uploading images -->
+          <input type="file" id="FileInput" />
+          <div id="serverRes"></div>
+        </div>
+        <!-- Buttons to add or cancel post -->
+        <div class="AddPost">
+          <button onclick="addPost()" type="button">Add</button>
+        </div>
+        <div class="CancelPost">
+          <button onclick="cancelPost()" type="button">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Placeholder for displaying users (hidden by default) -->
+      <div class="GetUsers" style="display: none"></div>
+    </div>
+
+    <!-- External JavaScript files -->
+    <script src="AllJs/Navigation.js"></script>
+    <script src="AllJs/Client.mjs"></script>
+
+    <!-- External JavaScript files -->
+  </body>
+</html>

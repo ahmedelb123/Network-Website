@@ -1,0 +1,634 @@
+.AddPostContainer {
+  position: fixed; /* Ensures it stays on top and in a fixed position */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjusts for perfect centering */
+  z-index: 1000; /* Higher z-index to bring it to the front */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ebe9e6; /* Light gray background */
+  border: 2px solid #ddd; /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.BlogContent textarea {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  width: 600px;
+  font-size: 16px;
+  padding-bottom: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background: #ffffff;
+  resize: none; /* Disable manual resizing */
+  overflow: hidden; /* Prevent scrollbar flicker */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.BlogContent input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5); /* Subtle focus glow */
+}
+.AddPostContainer button {
+  position: fixed;
+  width: 100px;
+  padding: 10px;
+  margin: 10px 5px; /* Adds spacing between buttons */
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #388e3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  right: 0px;
+  bottom: 0px;
+}
+/* Cancel button style */
+.CancelPost button {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  color: #2c3e50;
+  background-color: red;
+}
+
+/* Button hover effect */
+.AddPostContainer button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  background-color: #144517;
+}
+.CancelPost button:hover {
+  background-color: rgb(77, 15, 15);
+}
+.uploadImages {
+  position: fixed;
+  left: 10px;
+  top: 180px;
+}
+.uploadImages button {
+  bottom: 225px;
+  left: 220px;
+  background-color: black;
+  padding: 5px;
+}
+.HomePage .LogoImg {
+  position: fixed;
+  left: 40px;
+  top: 35px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  color: #217dbb;
+}
+.HomePage .ContentSearch {
+  position: fixed;
+  top: 20px;
+  left: 480px;
+}
+.HomePage .UserSearch {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+}
+.HomePage .ContentSearch input {
+  width: 500px;
+  padding: 15px;
+  border-radius: 20px;
+}
+.HomePage .UserSearch input {
+  width: 350px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.HomePage .ContentSearch button {
+  padding: 10px 15px;
+  background-color: #1037d1;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Round only the right corners */
+  cursor: pointer;
+}
+.HomePage .UserSearch button {
+  padding: 10px 15px;
+  background-color: #1037d1;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Round only the right corners */
+  cursor: pointer;
+}
+.HomePage .ContentSearch button:hover {
+  background-color: #071756;
+  transform: scale(1.05);
+}
+.HomePage .UserSearch button:hover {
+  background-color: #071756;
+  transform: scale(1.05);
+}
+.HomePage .PostContent {
+  position: fixed;
+
+  right: 240px;
+  top: 20px;
+}
+.HomePage .PostContent button {
+  width: 150px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: 400px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+.HomePage .PostContent button:hover {
+  background-color: grey;
+  transform: scale(1.05);
+}
+.HomePage .ProfileButton {
+  position: fixed;
+  top: 10px;
+  right: 100px;
+  width: 70px; /* Size of the profile picture */
+  height: 70px;
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #6c5b5b; /* Gray border around the circle */
+  background-color: #f0f0f0; /* Light background color for empty state */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  background-image: url("Images/ProfilePicture.jpg");
+  background-size: cover;
+  cursor: pointer;
+}
+.HomePage .ProfileButton:hover {
+  background-color: grey;
+  transform: scale(1.05);
+}
+.HomePage .LogOut button:hover {
+  background-color: rgb(84, 20, 20);
+  transform: scale(1.05);
+}
+
+.HomePage .LogOut button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Size of the profile picture */
+  height: 70px;
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #6c5b5b; /* Gray border around the circle */
+  background-color: #dd1f1f; /* Light background color for empty state */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  cursor: pointer;
+}
+/* Styling for the container */
+.container1 {
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  margin: 50px auto; /* Centers the div */
+  background: linear-gradient(
+    to bottom right,
+    #f3f4f6,
+    #dfe3ec
+  ); /* Subtle gradient background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Ensures the content doesn't overflow the container */
+}
+
+/* Title styling */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
+  color: #2c3e50; /* Dark text for contrast */
+  margin-bottom: 20px;
+}
+
+/* Logo styling */
+.logo img {
+  width: 120px;
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 20px;
+  border-radius: 50%; /* Makes it circular */
+  border: 3px solid #2c3e50; /* Thin border around logo */
+}
+
+/* Input box styling */
+.input-box {
+  width: 100%; /* Stretches across the container */
+  margin-bottom: 15px;
+}
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 8px;
+  outline: none;
+  background-color: #ecf0f1; /* Light background */
+  transition: all 0.3s ease-in-out;
+}
+.input-box input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5); /* Subtle focus glow */
+}
+
+/* Button styling */
+.button input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(to right, #3498db, #2c82c9); /* Blue gradient */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.button input:hover {
+  background: linear-gradient(
+    to right,
+    #217dbb,
+    #1e6aa9
+  ); /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Link styles */
+.dontHaveAcc,
+.HaveAcc {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #7f8c8d; /* Grayish text */
+}
+.dontHaveAcc a,
+.HaveAcc a {
+  color: #3498db; /* Blue links */
+  text-decoration: none;
+  font-weight: bold;
+}
+.dontHaveAcc a:hover,
+.HaveAcc a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Hidden signup form styling */
+.SignUpInfo {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  align-items: center;
+}
+.HomePage .ForYou {
+  position: fixed;
+  top: 150px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #3498db;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.HomePage .ForYou:hover {
+  color: #1abc9c;
+  transform: scale(1.1);
+}
+.HomePage .Following {
+  position: fixed;
+  top: 200px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #3498db;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  opacity: 0.5;
+}
+.HomePage .Following:hover {
+  color: #1abc9c;
+  transform: scale(1.1);
+}
+.AllPosts {
+  position: relative;
+  left: 450px;
+  top: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+.Post {
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  overflow: hidden;
+}
+.Post.hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.PostImage img {
+  width: 100%; /* Make the image responsive */
+  max-height: 400px; /* Limit the height */
+  object-fit: cover; /* Ensures the image fits within the box nicely */
+  margin-top: 10px; /* Add some space above the image */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+.ProfilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.ProfilePicture button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.Username {
+  position: relative;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #2c3e50;
+  bottom: 30px;
+  margin-left: 70px;
+}
+.Content {
+  font-size: 1em;
+  color: #555555;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.HomePage .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the nav */
+  z-index: 10; /* Higher z-index to appear above posts */
+  display: flex;
+  align-items: center;
+  background-color: rgb(16, 15, 15);
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+.hasAccount,
+.notEmail,
+.usernameUsed,
+.emptyField,
+.wrongNumber,
+.shortUsername,
+.notStrongPassword,
+.dontHaveAccount,
+.haveAccount {
+  display: none;
+  position: absolute;
+  bottom: 290px;
+  left: 680px;
+  z-index: 2;
+  color: red;
+  font-size: 15px;
+  font-style: italic;
+}
+.hasAccount {
+  left: 650px;
+}
+.dontHaveAccount,
+.haveAccount {
+  bottom: 400px;
+  left: 650px;
+}
+.follow-button,
+.unfollow-button {
+  position: relative;
+  background-color: #1d72b8; /* Blue color */
+  left: 360px;
+  bottom: 55px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.follow-button:hover {
+  background-color: #145a8d; /* Darker blue for hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.follow-button:active {
+  background-color: #0e3e5c; /* Even darker blue for active */
+  transform: scale(0.95); /* Slight shrink effect */
+}
+.unfollow-button {
+  background-color: grey;
+}
+.unfollow-button:hover {
+  background-color: rgb(74, 71, 71);
+  transform: scale(1.05);
+}
+.unfollow-button:active {
+  background-color: #313233; /* Even darker blue for active */
+  transform: scale(0.95); /* Slight shrink effect */
+}
+.like-comment-bar {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  align-items: center; /* Center vertically */
+  padding: 10px 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  border-top: 1px solid #e0e0e0; /* Subtle top border */
+  border-bottom: 1px solid #e0e0e0; /* Subtle bottom border */
+}
+
+.like-button,
+.comment-button {
+  background-color: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.like-button:hover,
+.comment-button:hover {
+  background-color: #e0f7fa; /* Light teal hover effect */
+  color: #00796b; /* Dark teal text */
+}
+
+.like-button:active,
+.comment-button:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+.like-button i,
+.comment-button i {
+  font-size: 18px; /* Icon size */
+}
+.NoContent {
+  position: fixed;
+  top: 350px;
+  left: 650px;
+  text-align: center;
+  font-size: 24px;
+  color: #4f4848; /* Optional: Gray text color */
+  padding: 20px;
+  background-color: #fff; /* Optional: White background for contrast */
+  border: 1px solid #ddd; /* Optional: Light border */
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+.GetUsers {
+  position: fixed;
+  left: 300px;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+}
+.GetUsers .user {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  right: 100px;
+  margin-bottom: 10px;
+}
+.GetUsers .user .follow {
+  position: relative;
+  left: 190px;
+  bottom: 60px;
+  width: 80px;
+  padding: 5px;
+  background-color: #1d72b8;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.GetUsers .user .unfollow {
+  position: relative;
+  left: 190px;
+  bottom: 60px;
+  width: 80px;
+  padding: 5px;
+  background-color: #505356;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.GetUsers .user .follow:hover {
+  background-color: #071756;
+  transform: scale(1.05);
+}
+
+.Getuser .user .ProfilePicture {
+  margin-right: 5px;
+  margin-bottom: 50px;
+  padding-left: 15px;
+}
+.Getuser .user .Username {
+  margin-left: 10px;
+  bottom: 0px;
+}
+/* Styling for apiData Container */
+.apiData {
+  position: fixed; /* Fixed to the viewport */
+  bottom: 10px; /* Positioned at the bottom */
+  left: 10px; /* Positioned at the left */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white; /* Text color */
+  padding: 15px; /* Space inside the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 300px; /* Limit width */
+}
+
+/* Individual Element Styling */
+.apiData .season {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below season */
+}
+
+.apiData .numberOfMatches {
+  font-size: 1rem;
+  margin-bottom: 10px; /* Space below matches */
+}
+
+.apiData .m1 {
+  font-size: 0.9rem;
+  margin-bottom: 5px; /* Space between matches */
+}
